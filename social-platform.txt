@@ -12,3 +12,8 @@ WHERE type = 'video'
 
 QUERY 2:
 
+SELECT p.id,p.title
+FROM posts AS p
+LEFT JOIN likes AS l
+ON p.id = l.post_id
+WHERE l.post_id IS NULL
