@@ -1,0 +1,14 @@
+QUERY 1:
+
+SELECT DISTINCT u.id, u.username
+FROM users AS u
+JOIN posts AS p
+ON p.user_id = u.id
+JOIN media_post AS mp
+ON mp.post_id = p.id
+JOIN medias AS m
+ON m.id = mp.media_id
+WHERE type = 'video'
+
+QUERY 2:
+
