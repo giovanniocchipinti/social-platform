@@ -35,4 +35,16 @@ ON p.user_id = u.id
 JOIN media_post AS mp
 ON mp.post_id = p.id
 GROUP BY u.id
+ORDER BY media_loaded DESC
+
+QUERY 5:
+
+SELECT u.id, u.username,COUNT(l.post_id) AS posts_likes 
+FROM users AS u
+JOIN posts AS p
+ON p.user_id = u.id
+JOIN likes AS l
+ON l.post_id = p.id
+GROUP BY u.id
+ORDER BY posts_likes DESC
 
