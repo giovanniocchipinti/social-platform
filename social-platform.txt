@@ -26,4 +26,13 @@ LEFT JOIN likes AS l
 ON p.id = l.post_id
 GROUP BY p.id
 
+QUERY 4:
+
+SELECT u.id,u.username , COUNT(media_id) AS media_loaded
+FROM users AS u
+JOIN posts AS p
+ON p.user_id = u.id
+JOIN media_post AS mp
+ON mp.post_id = p.id
+GROUP BY u.id
 
